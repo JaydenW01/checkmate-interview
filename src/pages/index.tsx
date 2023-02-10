@@ -4,8 +4,7 @@ import {getAuth, GoogleAuthProvider,signInWithRedirect,getRedirectResult} from "
 import {useRouter} from "next/router";
 import { initializeApp } from 'firebase/app';
 import {useEffect} from 'react';
-import SignedIn from './signed-in'
-import { Sign } from 'crypto';
+
 
 // Task 0: Initialize Firebase
 // Replace the following with your app's Firebase project configuration
@@ -45,11 +44,15 @@ export default function Home() {
   useEffect(()=>{
     getRedirectResult(auth).then((result)=>{
       const user = result.user.displayName;
-      router.push('./signed-in');
+      router.push({
+        pathname: './signed-in',
+        query: {name: user},
+      });
     }).catch((error)=>{
       const msg = error.messsage;
+      //console.log(msg);
     })
-  })
+  },[])
   return (
     <>
       <Head>

@@ -1,15 +1,27 @@
 import {GetServerSideProps, InferGetServerSidePropsType} from "next";
+import {useRouter} from "next/router";
 
 export default function SignedIn({ joke }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const router = useRouter();
+  const username = router.query.name;
   const setup = joke.setup;
   const punchline = joke.punchline;
+  const refreshpage = () => {
+    window.location.reload();
+  }
   return (
     <div>
+    {/* Task 3: Your own presentation of the joke here (Free Style 😉 )*/}
       <h1>Signed In</h1>
-      {/* Task 3: Your own presentation of the joke here (Free Style 😉 )*/}
-      <h2>{setup}</h2>
-      <h3>{punchline}</h3>
-      {/* End of Task 3 */}
+      <h2><i>Welcome {username}!</i></h2>
+      <div className="container">
+        <p className="joke-setup"><i>{setup}</i></p>
+        <p className="joke-punchline"><b>{punchline}</b></p>
+        <div className="button-container">
+          <button className="button" onClick={refreshpage}>New joke~ </button>
+        </div>
+      </div>
+    {/* End of Task 3 */}
     </div>
   )
 

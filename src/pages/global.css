@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: skyblue;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center; /* horizontally center */
+    align-items: center; /* vertically center */
+    text-align: left;
+}
+
+.container {
+    width: 800px;
+    padding: 50px 20px; /* top-bottom left-right */
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: grey;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: darkblue;
+    margin-bottom: 10px;
+}
+  
+.joke-setup {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-family: cursive;
+    color: purple;
+}
+
+.joke-punchline {
+    font-size: 3rem;
+    margin-bottom: 5px;
+    font-family: cursive;
+    color: red;
+}
+
+.login-status {
+    font-size: 1.8rem;
+}
+
+.button {
+    padding: 10px 20px; /* top-bottom left-right */
+    font-size: 0.99rem;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: green;
+}
+
+.button:hover {
+    cursor: pointer; /* hand symbol */
+}
+
+.button-container {
+    width: 450px;
+    padding: 20px; /* top-bottom left-right */
+    background-color: #fff;
+    border-radius: 20px;
+}
+
