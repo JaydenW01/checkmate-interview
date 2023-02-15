@@ -23,6 +23,14 @@ body {
     border-radius: 20px;
 }
 
+.loading_container {
+    width: 300px;
+    padding: 50px 20px; /* top-bottom left-right */
+    background-color: #fff;
+    border-radius: 20px;
+    align-items: center;
+}
+
 h1 {
     font-size: 2rem;
     color: grey;

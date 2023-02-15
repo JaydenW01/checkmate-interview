@@ -19,7 +19,7 @@ const auth = getAuth(app);
 
 export default function SignedIn({ joke }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [welcome_msg,setwelcome_msg] = useState("");
-  const [loggedin,setLoggedin] = useState(false);
+  const [loggedin,setLoggedin] = useState("loading");
   const router = useRouter();
   useEffect(()=>{
     onAuthStateChanged(auth,function(user) {
@@ -27,18 +27,19 @@ export default function SignedIn({ joke }: InferGetServerSidePropsType<typeof ge
         // User is signed in.
         // console.log("Logged In! " + user.displayName);
         setwelcome_msg(`Welcome ${user.displayName} !`);
-        setLoggedin(true);
+        setLoggedin('true');
       } else {
         // User is not signed in (maybe access the page by URL instead of being redirected)
         // console.log("Not logged in");
         setwelcome_msg("You are not logged in!");
+        setLoggedin('false');
       }
     });
   },[])
   
   const signout = ()=>{
     signOut(auth).then(()=>{
-      console.log('Signed out successfully');
+      // console.log('Signed out successfully');
       router.push({
         pathname: './'
       });
@@ -52,7 +53,10 @@ export default function SignedIn({ joke }: InferGetServerSidePropsType<typeof ge
   }
   return (
     <>
-      {loggedin ? (
+      {
+      loggedin === 'loading' ? (<div className="loading_container"><h3>Loading</h3></div>)
+      :
+      loggedin === 'true' ? (
         <div>
           {/* Task 3: Your own presentation of the joke here (Free Style 😉 )*/}
           <h1>Signed In</h1>
