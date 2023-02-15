@@ -3,6 +3,7 @@ import {useRouter} from "next/router";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { initializeApp } from 'firebase/app';
 import { useState, useEffect } from "react";
+import Link from 'next/link';
 
 const firebaseConfig = {
   // Enter your own firebase config here
@@ -78,7 +79,7 @@ export default function SignedIn({ joke }: InferGetServerSidePropsType<typeof ge
           <h1>{welcome_msg}</h1>
           <h2>This page is only for signed-in user</h2>
           <h3>Please go back to the home page and sign in.</h3>
-          <a href="/">Click me to go back to Home page!</a>
+          <Link href="/">Click me to go back to Home page!</Link>
         </div>
       )}
     </>
