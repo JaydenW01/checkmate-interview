@@ -62,8 +62,8 @@ export default function SignedIn({ joke }: InferGetServerSidePropsType<typeof ge
           <h1>Signed In</h1>
           <h2><i>{welcome_msg}</i></h2>
           <div className="container">
-          <p className="joke-setup"><i>{setup}</i></p>
-          <p className="joke-punchline"><b>{punchline}</b></p>
+            <p className="joke-setup"><i>{setup}</i></p>
+            <p className="joke-punchline"><b>{punchline}</b></p>
           <div className="button-container">
             <button className="button" onClick={refreshpage}>New joke~ </button>
             <button className="logout_button" onClick={signout}>Log Out</button>

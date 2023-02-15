@@ -24,11 +24,11 @@ body {
 }
 
 .loading_container {
-    width: 300px;
+    width: 200px;
     padding: 50px 20px; /* top-bottom left-right */
     background-color: #fff;
     border-radius: 20px;
-    align-items: center;
+    text-align: center;
 }
 
 h1 {
@@ -83,6 +83,10 @@ h2 {
 }
 
 .button:hover {
+    cursor: pointer; /* hand symbol */
+}
+
+.logout_button:hover {
     cursor: pointer; /* hand symbol */
 }
 
