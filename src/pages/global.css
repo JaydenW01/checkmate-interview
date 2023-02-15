@@ -63,6 +63,17 @@ h2 {
     background-color: green;
 }
 
+.logout_button {
+    padding: 10px 20px; 
+    margin-left: 40px;/* top-bottom left-right */
+    font-size: 0.99rem;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: purple;
+}
+
 .button:hover {
     cursor: pointer; /* hand symbol */
 }

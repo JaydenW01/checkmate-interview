@@ -45,8 +45,7 @@ export default function Home() {
     getRedirectResult(auth).then((result)=>{
       const user = result.user.displayName;
       router.push({
-        pathname: './signed-in',
-        query: {name: user},
+        pathname: './signed-in'
       });
     }).catch((error)=>{
       const msg = error.messsage;
@@ -56,7 +55,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Sign in to see the public holidays in HK</title>
+        <title>Sign in to see a RANDOM joke!</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className="container">
