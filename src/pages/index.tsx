@@ -43,15 +43,14 @@ export default function Home() {
   
   useEffect(()=>{
     getRedirectResult(auth).then((result)=>{
-      const user = result.user.displayName;
       router.push({
         pathname: './signed-in'
       });
     }).catch((error)=>{
       const msg = error.messsage;
       //console.log(msg);
-    })
-  },[])
+    });
+  },[]) // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <>
       <Head>
